@@ -3,8 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
+            stage('Checkout') {
             steps {
-                checkout scm
+            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/BIG-INTERNET-DEVOPS-RESOURCES/myInfra2021Repo']]])   
             }
         }
     
